@@ -42,6 +42,6 @@
       const url = new URL("https://deglaze.page.link/emily-fabulous");
       url.searchParams.append("recipeId", recipeId);
       console.log(`Redirecting user to: ${url.href}`);
-      window.location.href = url.href;
+      window.open(url.href, "_blank");
     }
   </script>

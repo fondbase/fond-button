@@ -38,9 +38,9 @@
   </button>
   <script>
     function cookItInFond() {
-      const recipeId = window.location.href;
-      const url = new URL("https://recipe.getfond.com/?isi=1582757266&ibi=co.deglaze.FondiOS&ifl=https://getfond.com/blogs/chicken-thigh-guy?utm_campaign%3Dbutton%26utm_source%3Drecipe%26utm_medium%3Dsite&ct=fondbutton&mt=8&pt=123439233&efr=1");
-      url.searchParams.append("link", recipeId);
+      const recipeId = encodeURIComponent(window.location.href);
+      const url = new URL(`https://recipe.getfond.com/?link=https://getfond.com/blogs/chicken-thigh-guy?recipeid%3D${recipeId}%26utm_campaign%3Dbutton%26utm_source%3Drecipe%26utm_medium%3Dsite&isi=1582757266&ibi=co.deglaze.FondiOS&ifl=https://getfond.com/blogs/chicken-thigh-guy?utm_campaign%3Dbutton%26utm_source%3Drecipe%26utm_medium%3Dsite&ct=fondbutton&mt=8&pt=123439233&efr=1`);
+      //url.searchParams.append("link", recipeId);
       console.log(`Redirecting user to: ${url.href}`);
       window.location.href = url.href;
     }

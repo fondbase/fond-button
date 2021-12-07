@@ -1,0 +1,48 @@
+<style>
+  .fond {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    background-color: rgb(230, 230, 230);
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 6px 20px;
+    padding-bottom: 8px;
+    font-size: 1rem;
+    transition: background 0.3s;
+    width: content; 
+  }
+  .fond:hover {
+    cursor: pointer;
+    background-color: rgb(209, 209, 209);
+    transition: background 0.3s;
+  }
+  .fond-logo {
+    margin-top: 5px;
+    width: 40px;
+    height: auto;
+    margin-left: 4px;
+    margin-bottom: 0px;
+  }
+</style>
+<button onClick="cookItInFond()" class="fond">
+  <b>Cook this on</b>
+  <img
+    id="fond"
+    src="https://getfond.com/assets/img/logo/fond-orange.png"
+    alt="FOND logo"
+    class="fond-logo"
+  />
+</button>
+<script>
+  function cookItInFond() {
+    const blog = "rumkis-golden-spoon";
+    const recipeId = encodeURIComponent(window.location.href);
+    const url = new URL(`https://recipe.getfond.com/?link=https://getfond.com/blogs/${blog}?recipeid%3D${recipeId}%26utm_campaign%3Dbutton%26utm_source%3Drecipe%26utm_medium%3Dsite&isi=1582757266&ibi=co.deglaze.FondiOS&ifl=https://getfond.com/blogs/${blog}?utm_campaign%3Dbutton%26utm_source%3Drecipe%26utm_medium%3Dsite&ct=fondbutton&mt=8&pt=123439233&efr=1`);
+    //url.searchParams.append("link", recipeId);
+    console.log(`Redirecting user to: ${url.href}`);
+    window.location.href = url.href;
+  }
+</script>

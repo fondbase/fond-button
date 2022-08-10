@@ -39,7 +39,7 @@
   <script>
     function cookItInFond() {
       const recipeId = window.location.href;
-      const url = new URL("https://deglaze.page.link/emily-fabulous");
+      const url = new URL("https://deglaze.page.link/blog-slug");
       url.searchParams.append("recipeId", recipeId);
       console.log(`Redirecting user to: ${url.href}`);
       window.open(url.href, "_blank");
